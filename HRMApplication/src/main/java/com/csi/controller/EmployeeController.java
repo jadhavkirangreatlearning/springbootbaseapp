@@ -20,6 +20,11 @@ public class EmployeeController {
     @Autowired
     EmployeeServiceImpl employeeServiceImpl;
 
+    @GetMapping("/services")
+    public String sayServices(){
+        return "SOFTWARE DEVELOPMENT SERVICES";
+    }
+
     @GetMapping("/signin/{empEmailId}/{empPassword}")
     public ResponseEntity<Boolean> signIn(@PathVariable String empEmailId, @PathVariable String empPassword){
         return ResponseEntity.ok(employeeServiceImpl.signIn(empEmailId, empPassword));
